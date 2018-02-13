@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from fuzzywuzzy import fuzz as fz
 import Levenshtein as lv
 
@@ -58,7 +59,7 @@ class oar:
         """required variable during class construction is 'expected'
            you can provide 'label'
            you can provide 'given'
-           >>> from ocraccuracyreporter import oar
+           >>> from ocraccuracyreporter.oar import oar
            >>> oreport = oar('john', 'name', 'joh')
            if you want to just append to a csv report
            >>> print(oreport)
@@ -136,6 +137,3 @@ class oar:
 
     def __str__(self):
         return "%s" % (self._reportData())
-
-oreport = oar('john', 'name', 'joh')
-print(repr(oreport))

@@ -9,8 +9,8 @@ You need a simple way to run sample/s as a whole or piece by piece and have a wa
 Usage
 =========
 
-
->>> from ocraccuracyreporter import oar
+>>> pip install ocraccuracyreporter
+>>> from ocraccuracyreporter.oar import oar
 
 .. topic:: initialising the reporter
 

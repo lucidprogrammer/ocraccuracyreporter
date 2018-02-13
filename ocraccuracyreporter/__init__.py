@@ -5,7 +5,3 @@ You need a simple way to run samples as a whole or piece by piece and
 have a way to state your OCR accuracy.
 """
 from .version import __version__
-
-from .oar import oar
-
-__all__ = ["oar"]
