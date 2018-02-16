@@ -35,22 +35,22 @@ class oar:
     given = None
 
     # calculated values - expected
-    total_expected_char_count = None
-    total_expected_word_count = None
+    total_expected_char_count = 0
+    total_expected_word_count = 0
     # calculated values - given
-    total_given_char_count = None
-    total_given_word_count = None
+    total_given_char_count = 0
+    total_given_word_count = 0
     # calculated accuracy in various algorithms
     # RATIO – uses pure Levenshtein Distance based matching
-    ratio = None
+    ratio = 0
     # PARTIAL_RATIO – matches based on best substrings
-    partial_ratio = None
+    partial_ratio = 0
     # TOKEN_SORT_RATIO – tokenizes the strings and sorts them alphabetically
-    token_sort_ratio = None
+    token_sort_ratio = 0
     # TOKEN_SET_RATIO – tokenizes the strings and compared the intersection
-    token_set_ratio = None
+    token_set_ratio = 0
     # Jaro metric giving more weight to common prefix
-    jaro_winkler = None
+    jaro_winkler = 0
     # this shows how many characters are really different in given compared to
     # expected
     distance = None
@@ -120,17 +120,18 @@ class oar:
         return "label,expected,given,ratio,partial_ratio,token_sort_ratio,"\
             "token_set_ratio,jaro_winkler,distance"
 
+    # making label expected given as string
     def _reportData(self):
-        return "%s,%s,%s,%s,%s,%s,%s,%s,%s" % (self.label,
-                                               self.expected,
-                                               self.given,
-                                               self.ratio,
-                                               self.partial_ratio,
-                                               self.token_sort_ratio,
-                                               self.token_set_ratio,
-                                               self.jaro_winkler,
-                                               self.distance
-                                               )
+        return '"%s","%s","%s",%s,%s,%s,%s,%s,%s' % (self.label,
+                                                     self.expected,
+                                                     self.given,
+                                                     self.ratio,
+                                                     self.partial_ratio,
+                                                     self.token_sort_ratio,
+                                                     self.token_set_ratio,
+                                                     self.jaro_winkler,
+                                                     self.distance
+                                                     )
 
     def __repr__(self):
         return "%s\n%s" % (self._reportHeader(), self._reportData())
